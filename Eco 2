@@ -1,0 +1,33 @@
+PRACTICALNO.2
+
+Aim: Calculating GST, SGST,CGST based on income.
+
+A)Calculating GST, SGST,CGST based on income.
+
+Code:
+
+salary = float(input("enter vour annual income amount"))
+tax = 0
+taxl =0.05*250000
+tax2 =0.05*500000
+
+if salary > 1000000
+    sal = salary - 1000000
+    tax = tax + 0.3 * sal
+    tax = tax1 + tax2 + tax3
+
+elif 500000 < salary <= 100000:
+    sal = salary - 500000
+    tax = tax + 0.1 * sal
+    tax = tax + tax1
+
+elif 250000 < salary <= 500000:
+    sal = salary - 250000
+    tax = tax + 0.5 * sal
+
+else:
+     print("wrong input")
+
+print ("Total GST:", tax)
+print("Total SGST:", tax/2)
+print ("Total CGST:", tax/2)
