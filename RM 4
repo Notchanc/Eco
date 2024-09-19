@@ -1,0 +1,46 @@
+practical number 4 
+Aim = calculating accumulated and present value
+
+A] Accumulated value
+
+code:
+
+def accumulated():
+    c = float(input("Enter the amount of investment: "))
+    r = float(input("Enter the rate of interest: "))
+    n_years = float(input("Enter number of years: ")) 
+    n_month = float(input("Enter number of months: "))
+    total_month = n_years 12 + n_month
+    n total_month/12
+    print("\n------")
+    print("Annuity Amount :")
+    print("Rate of intrest", r)
+    print("Time duration in month", total_month)
+    print("Time duration in years", n)
+    print("\n-----")
+    i = r/100
+    a = c/i*((1+i)**n-1)
+    return a
+
+accumulated()
+
+
+2] Present value
+
+Code:
+
+def present():
+    c = float(input("Enter the amount of investment: ")) r = float(input("Enter the rate of interest: "))
+    n_years = float(input("Enter number of years: ")) n_month = float(input("Enter number of months: "))
+    total_month= n_years*12+ n_month
+    n=total_month/12
+    print("\n--- --")
+    print("Annuity Amount:", c)
+    print("Rate of Interest", r)
+    print("Time duration in Month", total_month)
+    print("Time duration in years", n)
+    print("\n--- -")
+    i = r/100
+    p = c/i*(1-(1+i)**-n)
+    return p
+present()
