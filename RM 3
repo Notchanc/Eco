@@ -1,0 +1,118 @@
+Practical No. 3
+
+Aim:
+
+1. Calculating price index number and quality index number.
+
+A) Importing data set
+
+Code:
+
+import pandas as pd
+data = pd.read_excel(r"C:\Users\HP\Downloads\Economic Data.xlsx")
+data.head (n=22)
+
+output:
+
+| Unnamed: 0 | Commodity | Price 0 | Quantity 0 | Price 1 | Quantity 2 |
+|------------|-----------|---------|------------|---------|------------|
+| 0          | A         | 20      | 3          | 36      | 3          |
+| 1          | B         | 26      | 5          | 20      | 3          |
+| 2          | C         | 34      | 6          | 18      | 5          |
+| 3          | D         | 36      | 6          | 45      | 1          |
+| 4          | E         | 45      | 8          | 50      | 7          |
+| 5          | F         | 48      | 1          | 35      | 7          |
+| 6          | G         | 15      | 2          | 57      | 8          |
+| 7          | H         | 46      | 7          | 24      | 2          |
+| 8          | I         | 50      | 9          | 27      | 9          |
+| 9          | J         | 29      | 3          | 10      | 4          |
+| 10         | K         | 30      | 4          | 40      | 6          |
+
+
+B) Calculating price index number
+
+Code:
+
+base = sum(data["price 0"])
+current = sum(data["price 1"])
+pi = (current / base) * 100
+pi = pi-100
+print("Price Index Number is increased by: ", round(pi, 2),"%")
+
+
+C) Calculating quality index number
+
+Code:
+
+base = sum(data["quantity 0"]) 
+current = sum(data["quantity 2"]) 
+qi = (current / base) * 100 
+qi = qi-100 
+print("Quantity Index Number is increased by: ", round(qi,2),"%")
+
+2] Operation with new data set.
+
+A) importing data
+
+Code:
+
+import pandas as pd
+data = pd.read_excel(r"C:\Users\HP\Downloads\Eco3.xlsx")
+data.head(n=22)
+
+output:
+
+| Unnamed: 0 | Particulars    | New York | Washington DC | Weight |
+|------------|----------------|----------|---------------|--------|
+| 0          | Metal Meal     | -45.53   | -14.30        | 0.236  |
+| 1          | Loaf Bread     | -4.12    | -6.59         | 0.150  |
+| 2          | Washer         | -12      | -14           | -      |
+| 3          | Domestic Beer  | 23.12    | 14.12         | 0.361  |
+| 4          | Water          | 0.12     | 1.12          | 0.250  |
+| 5          | Loaf Bread     | 0.69     | 1.69          | 0.696  |
+| 6          | Egg            | 0.456    | 0.015         | -      |
+| 7          | One way ticket | 1.94     | 0.465         | -      |
+| 8          | Monthly pass   | 5.00     | 6.66          | 0.910  |
+| 9          | Gasoline       | 1.14     | 1.17          | 0.266  |
+
+
+B) Multiplying the old price with weights assigned
+
+Code:
+
+base2= data["New York"]
+current2= data["Weights"]
+m2=(base2*current2)
+print(m2)
+
+Output:
+
+0. 1.06908
+1. 8.41568
+2. 0.03000
+3. 0.18450
+4. 0.48024
+5. 0.00600
+6. 0.41850
+7. 4.55000
+8. 0.30324
+9. 9.98400
+10. 292.62870
+dtype:float64
+
+
+C) Multiply the new price with weights assigned
+
+Code:
+
+base1 = data["Whashington DC"] 
+current1 = data["Weights"]
+mi = (base1*current1) 
+print(mi)
+
+D) CLI = sum (old_price x weights) / sum (new_price x weights)
+
+Code:
+
+s1 = sum(m2)/sum(mi) 
+print(s1)
