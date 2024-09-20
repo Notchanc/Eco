@@ -10,8 +10,8 @@ def accumulated():
     r = float(input("Enter the rate of interest: "))
     n_years = float(input("Enter number of years: ")) 
     n_month = float(input("Enter number of months: "))
-    total_month = n_years 12 + n_month
-    n total_month/12
+    total_month = n_years*12 + n_month
+    n=total_month/12
     print("\n------")
     print("Annuity Amount :")
     print("Rate of intrest", r)
@@ -30,8 +30,10 @@ accumulated()
 Code:
 
 def present():
-    c = float(input("Enter the amount of investment: ")) r = float(input("Enter the rate of interest: "))
-    n_years = float(input("Enter number of years: ")) n_month = float(input("Enter number of months: "))
+    c = float(input("Enter the amount of investment: ")) 
+    r = float(input("Enter the rate of interest: "))
+    n_years = float(input("Enter number of years: ")) 
+    n_month = float(input("Enter number of months: "))
     total_month= n_years*12+ n_month
     n=total_month/12
     print("\n--- --")
