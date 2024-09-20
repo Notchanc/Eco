@@ -3,12 +3,15 @@ Practical No 5
 Aim: Time series Analysis
 
 code:
+1]
 
 import numpy as np
 import pandas as pd
 import matplotlib.pyplot as plt
 df pd.read_csv(r"C:\Users\Student\Downloads\retail.csv")
-df.head(n-146)
+df.head(n=146)
+
+2]
 
 
 import matplotlib.pyplot as plt 
@@ -16,6 +19,8 @@ import numpy as np
 xnp.linspace(0, 50, 500) 
 plt.plot(x, np.sin(x)) 
 plt.show()
+
+3]
 
 
 df.columns = ['InvoiceNo', 'StockCode', 'Description', 'Quantity', 'InvoiceDate', 'UnitPrice', 'CustomerID", 'country']
