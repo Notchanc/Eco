@@ -1,0 +1,72 @@
+Practical No. 8
+
+Aim: Implement Logistic Regression in python.
+
+Al Implement Logistic Regression in python.
+
+Code:-
+
+import pandas as pd
+from sklearn.linear_model import LogisticRegression
+from sklearn.model_selection import train_test_split
+import matplotlib.pyplot as plt 
+from sklearn.metrics import confusion_matrix
+import seaborn as sns
+from sklearn.metrics import accuracy_score
+data = pd.read_csv("C:/Users/Admin/Downloads/instagram_data.csv") 
+#data.iloc[3:10,5:10]
+
+data.tail()
+
+output:
+
+| profile pic | numberposts | fullname words | numletters username | Anumeusername | description length | external URL | private profile pictures | followers count |
+|-------------|-------------|----------------|---------------------|---------------|--------------------|--------------|--------------------------|-----------------|
+| 1           | 116         | 0.29           | 1                   | 0.0           | 0                  | 0            | 0                        | 13              |
+| 1           | 117         | 0.29           | 1                   | 0.0           | 0                  | 0            | 0                        | 14              |
+| 1           | 118         | 0.29           | 1                   | 0.0           | 0                  | 0            | 0                        | 15              |
+| 1           | 119         | 0.29           | 1                   | 0.0           | 0                  | 0            | 0                        | 16              |
+
+
+
+
+Code:-
+
+data.shape
+data.columns
+
+
+Code:-
+
+y_data = data[["fake"]]
+x_data = data.drop(columns={'fake'})
+y_data.head()
+
+code:
+
+x_data.head()
+
+Code:-
+
+<--X--> <--Y-->
+X_train, X_test, Y_train, Y_test = train_test_split(x_data, y_data, test_size=0.2, random_state=50)
+
+logistic_model = LogisticRegression()
+logistic_model.fit(X_train, Y_train)
+predicted = logistic_model.predict(X_test)
+predicted
+
+
+Code:-
+
+#Confusion Matrix
+
+fc = confusion_matrix(Y_test, predicted)
+sns.heatmap(fc, annot = True)
+
+
+Code:-
+
+#Accuracy with method 1 
+score1 = accuracy_score(Y_test, predicted) 
+score1
