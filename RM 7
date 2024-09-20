@@ -1,0 +1,75 @@
+Practical No. 7
+
+Aim: Implement Linear Regression in python.
+
+A] Implement Linear Regression in python.
+
+Code:-
+
+import pandas as pd
+import matplotlib.pyplot as plt
+from sklearn.linear_model import LinearRegression
+from sklearn.metrics import mean_squared_error
+%matplotlib inline
+
+# Data of Hours and Scores
+code:
+data = pd.read_csv("C:/Users/Admin/Desktop/student_scores.csv") 
+data.tail(4)
+
+
+Code:-
+
+# Scatter Plot
+
+plt.ylabel("Scores")
+plt.xlabel("Hours")
+plt.title("Score-Hours Scatter Plot")
+plt.scatter(data.Hours, data.Scores, color="blue")
+
+
+Code:-
+
+# Splitting Training and Testing Data
+
+data_x = data[["Hours"]]
+x_train = data_x[6:]
+x_test = data_x[:6]
+data_y = data["Scores"]
+y_train = data_y[6:]
+y_test = data_y[:6]
+y_train.head()
+
+
+Code:-
+
+data_x = data[["Hours"]]
+data_y = data["Scores"]
+from sklearn.model_selection import train_test_split
+X_train, X_test, Y_train, Y_test = train_test_split(data_x, data_y, train_size=0.8, random_state=5)
+X_test.shape
+
+
+Code:-
+
+# Training the model
+
+model = Linear Regression()
+model.fit(x_train, y_train)
+
+
+Code:-
+
+x_predict = model.predict(X_test)
+x_predict
+
+
+Code:-
+
+Y_test
+
+
+Code:-
+
+scores_predict = model.predict([[1.5]]) 
+print(scores_predict)
