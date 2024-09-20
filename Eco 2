@@ -11,7 +11,7 @@ tax = 0
 taxl =0.05*250000
 tax2 =0.05*500000
 
-if salary > 1000000
+if salary > 1000000:
     sal = salary - 1000000
     tax = tax + 0.3 * sal
     tax = tax1 + tax2 + tax3
